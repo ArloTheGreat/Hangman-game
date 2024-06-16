@@ -5,7 +5,8 @@
 
 
 #------------------FUNCTIONS-----------------
-
+import random
+words = ("print", "words", "lucky", "space", "enter", "happy", "slope", "" ) 
 
 
 
