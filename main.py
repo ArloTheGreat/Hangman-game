@@ -6,10 +6,12 @@
 
 #------------------FUNCTIONS-----------------
 
+def gameprose():
+        guess = input("Guess a letter:")
+
 
 
 
 
 #--------------------MAIN--------------------
 
-print("Hello Word")
