@@ -7,9 +7,11 @@
 #------------------FUNCTIONS-----------------
 
 
-
+def intro():
+    print("test")
 
 
 #--------------------MAIN--------------------
 
-print("Hello Word")
+
+intro()
