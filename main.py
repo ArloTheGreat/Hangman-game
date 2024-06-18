@@ -6,7 +6,7 @@
 
 #------------------FUNCTIONS-----------------
 import random
-words = ("print", "words", "lucky", "space", "enter", "happy", "slope", "" ) 
+words = ("print", "words", "lucky", "space", "enter", "happy", "slope", "speed" ) 
 
 
 
