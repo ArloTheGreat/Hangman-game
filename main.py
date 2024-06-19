@@ -1,16 +1,9 @@
-#--------------------VALUES-------------------
-
-lives = 10
-
-
-
-
-#------------------FUNCTIONS-----------------
+#------------------LISTS-----------------
 
 import random
 words = ("print", "words", "lucky", "space", "enter", "happy", "slope", "" ) 
 
-
+guessed_words = []
 
 
 
@@ -22,9 +15,10 @@ words = ("print", "words", "lucky", "space", "enter", "happy", "slope", "" )
 
 
 
-
-
 #--------------------MAIN--------------------
+
+# - Lives - #
+lives = 10
 
 print("Hello Word")
 
@@ -32,22 +26,35 @@ print("Hello Word")
 differentword = random.choice(words)
 
 
-# - Lives - #
-lives == 10
+
+
 
 
 while lives > 0:
-
-    # ----- GAME PROCESS
     while True:
         length = guess = input("Please guess a letter:")
 
         length = len(guess)
 
+        try:
+            int(guess)
+            print("\nPlease type in a letter. There's no numbers in a word!")
+        except:
+            print("\n")
+
         if length > 1:
-            print("Please guess 1 letter at a time")
-        elif length == 0:
-            print("Please guess a letter")
+            print("Please guess 1 letter at a time\n")
+        elif length == 0 or guess == " ":
+            print("You haven't guessed a letter\n")
+
+        else:
+            guessed_words.append(guess)
+            break
+    
+    print(guessed_words)
+
+
+
 
 #Hangman step depending on the
 if lives == 10:
