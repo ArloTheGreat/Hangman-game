@@ -161,3 +161,11 @@ elif lives == 0:
     print("|    /   \  ")
     print("|             ")
     print("|____________")
+#if the player has no lives left, display the end message, and ask if they want to play again.
+if lives == 0:
+    print ("_____end message____")
+    answer = input("Would you like to play again? Yes or No"). lower()
+    if answer == "Yes".lower():
+    #loop back to the start(idk how rn)
+    elif answer == "no".lower():
+        print ("Thank you for playing.")
