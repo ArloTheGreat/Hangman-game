@@ -72,7 +72,7 @@ elif lives == 9:
     print(" ")
     print(" ____________")
 elif lives == 8:
-    print("")
+    print(" ")
     print("|    ")
     print("|  ")
     print("|     ")
