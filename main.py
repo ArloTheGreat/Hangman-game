@@ -28,23 +28,26 @@ words = ("print", "words", "lucky", "space", "enter", "happy", "slope", "" )
 
 print("Hello Word")
 
-
+# -- Getting a random word from the 5 letter list
 differentword = random.choice(words)
 
 
+# - Lives - #
+lives == 10
 
-if lives > 0:
 
-
-
+while lives > 0:
 
     # ----- GAME PROCESS
-    length = guess = input("Guess a letter:")
+    while True:
+        length = guess = input("Please guess a letter:")
 
-    length = len(guess)
+        length = len(guess)
 
-    if length > 1 or length <= 0:
-        print("No")
+        if length > 1:
+            print("Please guess 1 letter at a time")
+        elif length == 0:
+            print("Please guess a letter")
 
 #Hangman step depending on the
 if lives == 10:
