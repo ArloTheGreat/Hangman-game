@@ -1,10 +1,25 @@
+
+#--------------------VALUES-------------------
+
+
+
+
+
+
+#------------------FUNCTIONS-----------------
+
 #------------------LISTS-----------------
+
 
 import random
 words = ("print", "words", "lucky", "space", "enter", "happy", "slope", "speed","brain","alone","cakes","dance","extra","farms","gamer","igloo","jeans","knock","laugh","messy","noble","ocean", "paint","queen", "radio", "salad", "table", "ultra", "voice", "wacky", "young", "zebra" ) 
 
 
+
+answer = "yes"
+
 guessed_words = []
+
 
 
 
@@ -18,18 +33,37 @@ guessed_words = []
 
 #--------------------MAIN--------------------
 
+
+while answer == "yes":
+
 # - Lives - #
-lives = 10
+    lives = 10
 
-print("Hello Word")
-
-# -- Getting a random word from the 5 letter list
-differentword = random.choice(words)
+    print("Hello Word")
 
 
+    print("Hello Word")
+
+    # -- Getting a random word from the 5 letter list
+    differentword = random.choice(words)
+
+    lives = 10
+
+
+    while lives > 0:
 
 
 
+        # ----- GAME PROCESS
+        while True:
+            length = guess = input("Please guess a letter:")
+
+            length = len(guess)
+
+            if length > 1:
+                print("Please guess 1 letter at a time")
+            elif length == 0:
+                print("Please guess a letter")
 
 while lives > 0:
     while True:
