@@ -1,3 +1,4 @@
+
 #--------------------VALUES-------------------
 
 
@@ -7,11 +8,18 @@
 
 #------------------FUNCTIONS-----------------
 
+#------------------LISTS-----------------
+
+
 import random
 words = ("print", "words", "lucky", "space", "enter", "happy", "slope", "speed","brain","alone","cakes","dance","extra","farms","gamer","igloo","jeans","knock","laugh","messy","noble","ocean", "paint","queen", "radio", "salad", "table", "ultra", "voice", "wacky", "young", "zebra" ) 
 print (random.choice(words))
 
+
 answer = "yes"
+
+guessed_words = []
+
 
 
 
@@ -23,11 +31,16 @@ answer = "yes"
 
 
 
-
-
 #--------------------MAIN--------------------
 
+
 while answer == "yes":
+
+# - Lives - #
+    lives = 10
+
+    print("Hello Word")
+
 
     print("Hello Word")
 
@@ -38,6 +51,8 @@ while answer == "yes":
 
 
     while lives > 0:
+
+
 
         # ----- GAME PROCESS
         while True:
@@ -169,5 +184,4 @@ while answer == "yes":
             print("Hello")
         if answer == "no":
             print("Goodbye")
-            break
-        #loop back to the start(idk how rn)
+        break
