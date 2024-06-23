@@ -2,7 +2,7 @@
 
 import random
 words = ("print", "words", "lucky", "space", "enter", "happy", "slope", "speed","brain","alone","cakes","dance","extra","farms","gamer","igloo","jeans","knock","laugh","messy","noble","ocean", "paint","queen", "radio", "salad", "table", "ultra", "voice", "wacky", "young", "zebra" ) 
-print (random.choice(words))
+
 
 guessed_words = []
 
@@ -47,8 +47,10 @@ while lives > 0:
             print("Please guess 1 letter at a time\n")
         elif length == 0 or guess == " ":
             print("You haven't guessed a letter\n")
+        elif guess in guessed_words:
+            print("You have already guessed this letter")
 
-        else:
+        if length == 1 and guess != " " and guess not in guessed_words:
             guessed_words.append(guess)
             break
     
@@ -172,7 +174,8 @@ elif lives == 0:
 if lives == 0:
     print ("_____end message____")
     answer = input("Would you like to play again? Yes or No"). lower()
-    if answer == "Yes".lower():
+    if answer == "Yes":
+        print("ok")
     #loop back to the start(idk how rn)
-    elif answer == "no".lower():
+    elif answer == "no":
         print ("Thank you for playing.")
