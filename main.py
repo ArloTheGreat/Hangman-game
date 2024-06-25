@@ -2,9 +2,15 @@
 
 
 import random
+
 words = ("print", "words", "lucky", "space", "exits", "fetch", 
          "slope", "speed","brain","alone","cakes","dance","extra","farms","gamer","froze",
          "jeans","bangs","laugh","mudge","noble","ocean", "paint","kings", "radio", "crane", "table", "ultra", "voice", "wacky", "young", "zebra" ) 
+
+
+(random.choice(words))
+
+
 
 
 
