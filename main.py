@@ -1,13 +1,3 @@
-
-#--------------------VALUES-------------------
-
-
-
-
-
-
-#------------------FUNCTIONS-----------------
-
 #------------------LISTS-----------------
 
 
@@ -47,7 +37,7 @@ while answer == "yes":
 
 
 
-
+# --- GAME PROCESS --- #
     while lives > 0:
         while True:
             length = guess = input("Please guess a letter:")
@@ -62,15 +52,15 @@ while answer == "yes":
             if guess.isalpha():
                 if guess in guessed_words:
                     print("You have already guessed this letter")
+                elif length > 1:
+                    print("Please guess 1 letter at a time\n")
+                elif length == 0 or guess == " ":
+                    print("You haven't guessed a letter\n")
+
                 else:
                     guessed_words.append(guess)
                     break
-            elif length > 1:
-                print("Please guess 1 letter at a time\n")
-            elif length == 0 or guess == " ":
-                print("You haven't guessed a letter\n")
-
-        print(guessed_words)
+        
 
 
 
