@@ -70,13 +70,11 @@ while answer == "yes":
     while lives > 0 and "_" in placeholdlist:
         while True:
 
-<<<<<<< HEAD
+
 
             print(*placeholdlist)
-=======
-            print(lettered)
-            guess = input("Please guess a letter:")
->>>>>>> parent of 63692c3 (Brandon Commit 8.0)
+
+            
 
             guess = input("Please guess a letter:").lower()
 
@@ -100,7 +98,7 @@ while answer == "yes":
                     guessed_words.append(guess)
                     break
             
-        print(guessed_words)
+            print(guessed_words)
         if guess in differentword:
             print("Correct! That is in the word")
             placehold_score += 1
@@ -115,7 +113,7 @@ while answer == "yes":
 #Hangman step depending on the
 #we need to check placeholder score if this is nonzero the user has just won the game and we shouldnt output the hangman
         if placehold_score == 5:
-<<<<<<< HEAD
+
 
             print("Yay! Good job you won the game.")
 
@@ -128,10 +126,10 @@ while answer == "yes":
 
 
         if lives == 9:
-=======
+
             print("------victory message-----")
         elif lives == 9:
->>>>>>> parent of 63692c3 (Brandon Commit 8.0)
+
             print(" ")
             print(" ")
             print(" ")
