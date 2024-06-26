@@ -32,6 +32,8 @@ actual_word = []
 
 
 #--------------------MAIN--------------------
+
+#_____Introduction to the game-----
 name = input("Whats your name?")
 print("Haiii, Walcome to the game",name)
 print("This game about hangman")
@@ -41,6 +43,8 @@ print("Good job,That's the end")
 
 while answer == "yes":
  
+
+
 
  # - Lives - #
     lives = 10
@@ -92,7 +96,9 @@ while answer == "yes":
     
 #Hangman step depending on the
 #we need to check placeholder score if this is nonzero the user has just won the game and we shouldnt output the hangman
-        if lives == 9:
+        if placehold_score == 5:
+            print("------victory message-----")
+        elif lives == 9:
             print(" ")
             print(" ")
             print(" ")
@@ -205,4 +211,5 @@ while answer == "yes":
             #loop back to the start(idk how rn)
             elif answer == "no":
                 print ("Thank you for playing.")
+                break
         
