@@ -32,11 +32,17 @@ actual_word = []
 
 
 #--------------------MAIN--------------------
-
+name = input("Whats your name?")
+print("Haiii, Walcome to the game",name)
+print("This game about hangman")
+print("Here is how you play hangman?")
+print("The participants playing have 10 chances to guess a random 5 letter word.")
+print("Good job,That's the end")
 
 while answer == "yes":
+ 
 
-# - Lives - #
+ # - Lives - #
     lives = 10
     placehold_score = 0
 
@@ -47,6 +53,10 @@ while answer == "yes":
     actual_word.append(differentword)
 
     print(actual_word)
+
+
+
+
 
 # --- GAME PROCESS --- #
     while lives > 0:
@@ -184,7 +194,11 @@ while answer == "yes":
             print("|____________")
     #if the player has no lives left, display the end message, and ask if they want to play again.
         if lives == 0:
-            print ("_____end message____")
+            print("Hello player, you lost in this game.")
+            print("Why can you lose in this game?")
+            print("Would you like to find a solution?")
+            print("There are still many games that you haven't won, try another time!!!")
+            print("The game is over,remember your defeat")
             answer = input("Would you like to play again? Yes or No\n"). lower()
             if answer == "Yes":
                 print("")
