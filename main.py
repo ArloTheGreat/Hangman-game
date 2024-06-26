@@ -16,9 +16,7 @@ words = ("print", "words", "lucky", "space", "exits", "fetch",
 
 answer = "yes"
 
-guessed_words = []
 
-actual_word = []
 
 
 
@@ -28,10 +26,9 @@ actual_word = []
 # ----- Display the used letters, the word, the filler spaces and the correct guesses.
 
 
-
-
-
 #--------------------MAIN--------------------
+
+
 
 #_____Introduction to the game-----
 name = input("Whats your name?")
@@ -41,19 +38,27 @@ print("Here is how you play hangman?")
 print("The participants playing have 10 chances to guess a random 5 letter word.")
 print("Good job,That's the end")
 
+
 while answer == "yes":
  
 
 
+    # - Values - #
+
+
  # - Lives - #
+
     lives = 10
     placehold_score = 0
+    guessed_words = []
+    actual_word = []
 
-
-
-    # -- Getting a random word from the 5 letter list
+    # -- Getting a random word from the 5 letter list -- #
     differentword = random.choice(words)
     actual_word.append(differentword)
+    lettered = list(actual_word[0])
+    placeholder = "_" * len(differentword) 
+    placeholdlist = list(placeholder)
 
     print(actual_word)
 
@@ -62,9 +67,14 @@ while answer == "yes":
 
 
 # --- GAME PROCESS --- #
-    while lives > 0:
+    while lives > 0 and "_" in placeholdlist:
         while True:
+
+            print(lettered)
+            guess = input("Please guess a letter:")
+
             guess = input("Please guess a letter:").lower()
+
 
             length = len(guess)
 
@@ -89,6 +99,10 @@ while answer == "yes":
         if guess in differentword:
             print("Correct! That is in the word")
             placehold_score += 1
+            for i in range(len(differentword)):
+                if differentword[i] == guess:
+                    placeholdlist[i] = guess
+                    print(*placeholdlist)
         elif guess not in differentword:
             lives -= 1
             print("Incorrect, you got this! Try again\n")
@@ -203,7 +217,7 @@ while answer == "yes":
             print("Why can you lose in this game?")
             print("Would you like to find a solution?")
             print("There are still many games that you haven't won, try another time!!!")
-            print("The game is over,remember your defeat")
+            print("The game is over, remember your defeat")
             answer = input("Would you like to play again? Yes or No\n"). lower()
             if answer == "yes":
                 print("")
