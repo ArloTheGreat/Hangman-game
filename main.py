@@ -45,7 +45,6 @@ while answer == "yes":
  
 
 
-
  # - Lives - #
     lives = 10
     placehold_score = 0
@@ -65,7 +64,7 @@ while answer == "yes":
 # --- GAME PROCESS --- #
     while lives > 0:
         while True:
-            guess = input("Please guess a letter:")
+            guess = input("Please guess a letter:").lower()
 
             length = len(guess)
 
