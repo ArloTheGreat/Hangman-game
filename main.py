@@ -51,7 +51,7 @@ while answer == "yes":
 # --- GAME PROCESS --- #
     while lives > 0:
         while True:
-            length = guess = input("Please guess a letter:")
+            guess = input("Please guess a letter:")
 
             length = len(guess)
 
@@ -81,6 +81,7 @@ while answer == "yes":
             print("Incorrect, you got this! Try again\n")
     
 #Hangman step depending on the
+#we need to check placeholder score if this is nonzero the user has just won the game and we shouldnt output the hangman
         if lives == 9:
             print(" ")
             print(" ")
@@ -155,8 +156,8 @@ while answer == "yes":
             print("____________")
             print("|      |")
             print("|    ('-')")
-            print("|     /|\ ")
-            print("|    / | \  ")
+            print(r"|     /|\ ")
+            print(r"|    / | \  ")
             print("|        ")
             print("|        ")
             print("|             ")
@@ -165,8 +166,8 @@ while answer == "yes":
             print("____________")
             print("|      |")
             print("|    ('-')")
-            print("|     /|\ ")
-            print("|    / | \  ")
+            print(r"|     /|\ ")
+            print(r"|    / | \  ")
             print("|     /   ")
             print("|    /    ")
             print("|             ")
@@ -175,10 +176,10 @@ while answer == "yes":
             print("____________")
             print("|      |")
             print("|    (X-X)")
-            print("|     /|\ ")
-            print("|    / | \  ")
-            print("|     / \  ")
-            print("|    /   \  ")
+            print(r"|     /|\ ")
+            print(r"|    / | \  ")
+            print(r"|     / \  ")
+            print(r"|    /   \  ")
             print("|             ")
             print("|____________")
     #if the player has no lives left, display the end message, and ask if they want to play again.
