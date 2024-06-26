@@ -73,6 +73,7 @@ while answer == "yes":
     while lives > 0:
         while True:
 
+
             print(*placeholdlist)
 
             guess = input("Please guess a letter:").lower()
@@ -111,9 +112,19 @@ while answer == "yes":
 #Hangman step depending on the
 #we need to check placeholder score if this is nonzero the user has just won the game and we shouldnt output the hangman
         if placehold_score == 5:
+
             print("------victory message-----")
-            answer = input("Do you want to play again?").lower()
-            
+
+            answer = input("Would you like to play again? Yes or No\n"). lower()
+            if answer == "yes":
+                print("")
+            elif answer == "no":
+                print ("Thank you for playing.")
+                break
+
+            print("Yay! Good job you won the game.")
+
+
         elif lives == 9:
             print(" ")
             print(" ")
@@ -212,7 +223,7 @@ while answer == "yes":
             print("There are still many games that you haven't won, try another time!!!")
             print("The game is over, remember your defeat")
             answer = input("Would you like to play again? Yes or No\n"). lower()
-            if answer == "Yes":
+            if answer == "yes":
                 print("")
             #loop back to the start(idk how rn)
             elif answer == "no":
