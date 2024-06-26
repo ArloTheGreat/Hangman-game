@@ -109,7 +109,7 @@ while answer == "yes":
 #we need to check placeholder score if this is nonzero the user has just won the game and we shouldnt output the hangman
         if placehold_score == 5:
 
-            print("------victory message-----")
+            print("Yay! Good job you won the game.")
             answer = input("Would you like to play again? Yes or No\n"). lower()
             if answer == "yes":
                 print("")
@@ -117,9 +117,7 @@ while answer == "yes":
             elif answer == "no":
                 print ("Thank you for playing.")
                 break
-
-            print("Yay! Good job you won the game.")
-
+            
         elif lives == 9:
             print(" ")
             print(" ")
