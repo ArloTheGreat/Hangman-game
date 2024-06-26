@@ -219,7 +219,7 @@ while answer == "yes":
             print("There are still many games that you haven't won, try another time!!!")
             print("The game is over, remember your defeat")
             answer = input("Would you like to play again? Yes or No\n"). lower()
-            if answer == "Yes":
+            if answer == "yes":
                 print("")
             #loop back to the start(idk how rn)
             elif answer == "no":
