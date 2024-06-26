@@ -4,7 +4,7 @@
 import random
 
 words = ("print", "words", "lucky", "space", "exits", "fetch", 
-         "slope", "plain","brain","alone","cakes","dance","extra","farms","gamer","froze",
+         "slope", "speed","brain","alone","cakes","dance","extra","farms","gamer","froze",
          "jeans","bangs","laugh","mudge","noble","ocean", "paint","kings", "radio", "crane", "table", "ultra", "voice", "wacky", "young", "zebra" ) 
 
 
@@ -31,13 +31,12 @@ answer = "yes"
 
 
 #_____Introduction to the game-----
-def intro():
-    name = input("Whats your name?")
-    print("\nHaiii, Walcome to the game,",name)
-    print("This game about hangman")
-    print("Here is how you play hangman:")
-    print("The participants playing have 10 chances to guess a random 5 letter word.\n")
-    print("I hope you have fun!\n")
+name = input("Whats your name?")
+print("Haiii, Walcome to the game",name)
+print("This game about hangman")
+print("Here is how you play hangman?")
+print("The participants playing have 10 chances to guess a random 5 letter word.")
+print("Good job,That's the end")
 
 
 while answer == "yes":
@@ -61,20 +60,23 @@ while answer == "yes":
     placeholder = "_" * len(differentword) 
     placeholdlist = list(placeholder)
 
-    print(*actual_word)
+    print(actual_word)
 
 
 
 
 
 # --- GAME PROCESS --- #
-    intro()
-
-    while lives > 0:
+    while lives > 0 and "_" in placeholdlist:
         while True:
 
+<<<<<<< HEAD
 
             print(*placeholdlist)
+=======
+            print(lettered)
+            guess = input("Please guess a letter:")
+>>>>>>> parent of 63692c3 (Brandon Commit 8.0)
 
             guess = input("Please guess a letter:").lower()
 
@@ -98,13 +100,14 @@ while answer == "yes":
                     guessed_words.append(guess)
                     break
             
-        print("You have guessed: ",*guessed_words, "\n")
+        print(guessed_words)
         if guess in differentword:
             print("Correct! That is in the word")
             placehold_score += 1
             for i in range(len(differentword)):
                 if differentword[i] == guess:
                     placeholdlist[i] = guess
+                    print(*placeholdlist)
         elif guess not in differentword:
             lives -= 1
             print("Incorrect, you got this! Try again\n")
@@ -112,6 +115,7 @@ while answer == "yes":
 #Hangman step depending on the
 #we need to check placeholder score if this is nonzero the user has just won the game and we shouldnt output the hangman
         if placehold_score == 5:
+<<<<<<< HEAD
 
             print("Yay! Good job you won the game.")
 
@@ -124,6 +128,11 @@ while answer == "yes":
 
 
         if lives == 9:
+=======
+            print("------victory message-----")
+        elif lives == 9:
+>>>>>>> parent of 63692c3 (Brandon Commit 8.0)
+            print(" ")
             print(" ")
             print(" ")
             print(" ")
@@ -140,6 +149,7 @@ while answer == "yes":
             print("|    ")
             print("|   ")
             print("|")
+            print("|             ")
             print("|____________")
         elif lives == 7:
             print("____________")
@@ -148,6 +158,7 @@ while answer == "yes":
             print("|      ")
             print("|     ")
             print("|       ")
+            print("|    ")
             print("|             ")
             print("|____________")
         elif lives == 6:
@@ -157,6 +168,7 @@ while answer == "yes":
             print("|      ")
             print("|      ")
             print("|      ")
+            print("|     ")
             print("|             ")
             print("|____________")
         elif lives == 5:
@@ -166,6 +178,7 @@ while answer == "yes":
             print("|     ")
             print("|     ")
             print("|      ")
+            print("|     ")
             print("|             ")
             print("|____________")
         elif lives == 4:
@@ -176,6 +189,7 @@ while answer == "yes":
             print("|      |   ")
             print("|      ")
             print("|     ")
+            print("|             ")
             print("|____________")
         elif lives == 3:
             print("____________")
@@ -185,33 +199,37 @@ while answer == "yes":
             print("|    / |   ")
             print("|        ")
             print("|         ")
+            print("|             ")
             print("|____________")
         elif lives == 2:
             print("____________")
             print("|      |")
             print("|    ('-')")
-            print("|     /|\ ")
-            print("|    / | \  ")
+            print(r"|     /|\ ")
+            print(r"|    / | \  ")
             print("|        ")
             print("|        ")
+            print("|             ")
             print("|____________")
         elif lives == 1:
             print("____________")
             print("|      |")
             print("|    ('-')")
-            print("|     /|\ ")
-            print("|    / | \  ")
+            print(r"|     /|\ ")
+            print(r"|    / | \  ")
             print("|     /   ")
             print("|    /    ")
+            print("|             ")
             print("|____________")
         elif lives == 0:
             print("____________")
             print("|      |")
             print("|    (X-X)")
-            print("|     /|\ ")
-            print("|    / | \  ")
-            print("|     / \  ")
-            print("|    /   \  ")
+            print(r"|     /|\ ")
+            print(r"|    / | \  ")
+            print(r"|     / \  ")
+            print(r"|    /   \  ")
+            print("|             ")
             print("|____________")
     #if the player has no lives left, display the end message, and ask if they want to play again.
         if lives == 0:
