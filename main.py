@@ -25,19 +25,21 @@ answer = "yes"
 
 # ----- Display the used letters, the word, the filler spaces and the correct guesses.
 
+def intro():
+    name = input("What's your name?")
+    print("Hello, welcome to the game,",name)
+    print("This game is called hangman")
+    print("Here is how you play hangman:\n")
+    print("The participants playing have 10 chances to guess a random 5 letter word.")
+    print("\nGood job,That's the end")
 
 #--------------------MAIN--------------------
 
 
 
 #_____Introduction to the game-----
-name = input("Whats your name?")
-print("Haiii, Walcome to the game",name)
-print("This game about hangman")
-print("Here is how you play hangman?")
-print("The participants playing have 10 chances to guess a random 5 letter word.")
-print("Good job,That's the end")
 
+intro()
 
 while answer == "yes":
  
@@ -74,7 +76,7 @@ while answer == "yes":
 
             
 
-            guess = input("Please guess a letter:").lower()
+            guess = input("\nPlease guess a letter:").lower()
 
 
             length = len(guess)
@@ -96,7 +98,6 @@ while answer == "yes":
                     guessed_words.append(guess)
                     break
             
-            print(guessed_words)
         if guess in differentword:
             print("Correct! That is in the word")
             placehold_score += 1
@@ -104,9 +105,13 @@ while answer == "yes":
                 if differentword[i] == guess:
                     placeholdlist[i] = guess
                     print(*placeholdlist)
+                    print("You have guessed ", *guessed_words)
         elif guess not in differentword:
             lives -= 1
+            print(*placeholdlist)
             print("Incorrect, you got this! Try again\n")
+            print("You have guessed ", *guessed_words)
+            print("\nYou have",lives,"lives left")
     
 #Hangman step depending on the
 #we need to check placeholder score if this is nonzero the user has just won the game and we shouldnt output the hangman
@@ -227,14 +232,15 @@ while answer == "yes":
     #if the player has no lives left, display the end message, and ask if they want to play again.
         if lives == 0:
             print("Hello player, you lost in this game.")
-            print("Why can you lose in this game?")
-            print("Would you like to find a solution?")
-            print("There are still many games that you haven't won, try another time!!!")
+            print("\nThe word was", *actual_word)
+            print("\nWhy can you lose in this game? Would you like to find a solution?")
+
+            print("\nThere are still many games that you haven't won, try another time!!!")
             print("The game is over, remember your defeat")
-            answer = input("Would you like to play again? Yes or No\n"). lower()
+            answer = input("\nWould you like to play again? Yes or No\n"). lower()
             if answer == "yes":
                 print("")
-            #loop back to the start(idk how rn)
+
             elif answer == "no":
                 print ("Thank you for playing. Have a great day!")
                 break
