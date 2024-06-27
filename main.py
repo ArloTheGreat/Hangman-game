@@ -60,7 +60,7 @@ while answer == "yes":
     placeholder = "_" * len(differentword) 
     placeholdlist = list(placeholder)
 
-    print(actual_word)
+
 
 
 
@@ -71,8 +71,6 @@ while answer == "yes":
         while True:
 
 
-
-            print(*placeholdlist)
 
             
 
@@ -126,9 +124,6 @@ while answer == "yes":
 
 
         if lives == 9:
-
-            print("------victory message-----")
-        elif lives == 9:
 
             print(" ")
             print(" ")
@@ -241,6 +236,6 @@ while answer == "yes":
                 print("")
             #loop back to the start(idk how rn)
             elif answer == "no":
-                print ("Thank you for playing.")
+                print ("Thank you for playing. Have a great day!")
                 break
         
