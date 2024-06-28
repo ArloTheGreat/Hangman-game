@@ -33,6 +33,12 @@ def intro():
     print("The participants playing have 10 chances to guess a random 5 letter word.")
     print("\nGood job,That's the end")
 
+def lose():
+        print("\nWhy can you lose in this game? Would you like to find a solution?")
+
+        print("\nThere are still many games that you haven't won, try another time!!!")
+        print("\nThe game is over, remember your defeat")
+
 #--------------------MAIN--------------------
 
 
@@ -68,6 +74,7 @@ while answer == "yes":
 
 
 
+
 # --- GAME PROCESS --- #
     while lives > 0 and "_" in placeholdlist:
         while True:
@@ -76,7 +83,7 @@ while answer == "yes":
 
             
 
-            guess = input("\nPlease guess a letter:").lower()
+            guess = input("\nPlease guess a letter: ").lower()
 
 
             length = len(guess)
@@ -90,44 +97,45 @@ while answer == "yes":
                 if guess in guessed_words:
                     print("You have already guessed this letter")
                 elif length > 1:
-                    print("Please guess 1 letter at a time\n")
+                    print("Please guess 1 letter at a time. No cheating!\n")
                 elif length == 0 or guess == " ":
-                    print("You haven't guessed a letter\n")
+                    print("You haven't guessed a letter. Hint: Try use vowels first(a, e, i, o, u)\n")
                 
                 else:
                     guessed_words.append(guess)
+                    displayed_guesses = ', '.join(guessed_words)
                     break
             
         if guess in differentword:
-            print("Correct! That is in the word")
+            print("Correct! That is in the word. Good job!")
             placehold_score += 1
             for i in range(len(differentword)):
                 if differentword[i] == guess:
                     placeholdlist[i] = guess
-                    print(*placeholdlist)
-                    print("You have guessed ", *guessed_words)
+                    print("\n",*placeholdlist)
+                    print("You have guessed ", displayed_guesses)
         elif guess not in differentword:
             lives -= 1
             print(*placeholdlist)
-            print("Incorrect, you got this! Try again\n")
-            print("You have guessed ", *guessed_words)
+            print("\nIncorrect, you got this! Try again. Hint: Try use vowels first(a, e, i, o, u)!\n")
+            print("You have guessed", displayed_guesses)
             print("\nYou have",lives,"lives left")
+
     
-#Hangman step depending on the
-#we need to check placeholder score if this is nonzero the user has just won the game and we shouldnt output the hangman
+
+# - - Winning Message - - #
         if placehold_score == 5:
 
-
-            print("Yay! Good job you won the game.")
+            print("\nYay! Good job you won the game.\n")
 
             answer = input("Would you like to play again? Yes or No\n"). lower()
             if answer == "yes":
                 print("")
             elif answer == "no":
-                print ("Thank you for playing.")
+                print ("Thank you for playing. Have a great day!")
                 break
 
-
+#Hangman step depending on the chances left
         if lives == 9:
 
             print(" ")
@@ -233,15 +241,13 @@ while answer == "yes":
         if lives == 0:
             print("Hello player, you lost in this game.")
             print("\nThe word was", *actual_word)
-            print("\nWhy can you lose in this game? Would you like to find a solution?")
-
-            print("\nThere are still many games that you haven't won, try another time!!!")
-            print("The game is over, remember your defeat")
+            lose()
             answer = input("\nWould you like to play again? Yes or No\n"). lower()
             if answer == "yes":
                 print("")
 
             elif answer == "no":
                 print ("Thank you for playing. Have a great day!")
+                
                 break
         
