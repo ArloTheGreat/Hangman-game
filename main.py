@@ -23,7 +23,6 @@ answer = "yes"
 
 #------------------FUNCTIONS-----------------
 
-# ----- Display the used letters, the word, the filler spaces and the correct guesses.
 
 def intro():
     name = input("What's your name?")
